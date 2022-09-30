@@ -1,0 +1,22 @@
+.c-mediaPlayer {
+    display: block;
+    background-color: #313131;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);
+}
+
+.c-mediaPlayer > h4 {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+}
+
+.c-mediaPlayer > p {
+    color: #aaa;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
