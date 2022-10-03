@@ -1,10 +1,11 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
 import MediaPlayer from "../../components/MediaPlayer/MediaPlayer";
+
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -12,36 +13,48 @@ export default function App() {
   const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1)
   const [songs, setSongs] = useState([
     {
-      title: "song1", 
-      artist: "artist1", 
-      img_src: "./images/song-1.jpeg", 
-      src: "./music/SONG1"
+      title: "Redemption", 
+      artist: "Max Brhon", 
+      img_src: "./images/MaxBrhon-Redemption.png", 
+      src: "./music/MaxBrhon-Redemption.mp3"
     }, 
     {
-      title: "song2", 
-      artist: "artist2", 
-      img_src: "./images/song-2.jpeg", 
-      src: "./music/SONG2"
+      title: "Tonight", 
+      artist: "Facading", 
+      img_src: "./images/Facading-Tonight.png", 
+      src: "./music/Facading-Tonight.mp3"
     }, 
     {
-      title: "song3", 
-      artist: "artist3", 
-      img_src: "./images/song-3.jpeg", 
-      src: "./music/SONG3"
+      title: "Out Of Here", 
+      artist: "borne", 
+      img_src: "./images/borne-OutOfHere.png", 
+      src: "./music/borne-OutOfHere.mp3"
     }, 
     {
-      title: "song4", 
-      artist: "artist4", 
-      img_src: "./images/song-4.jpeg", 
-      src: "./music/SONG4"
+      title: "Ricochet", 
+      artist: "Rob Gasser", 
+      img_src: "./images/RobGasser-Ricochet.png", 
+      src: "./music/RobGasser-Ricochet.mp3"
     }, 
   ])
+
+  useEffect(() => {
+      setNextSongIndex(() => {
+        if (currentSongIndex + 1 > songs.length -1) {
+          return 0;
+        } else {
+          return currentSongIndex + 1;
+        }
+      });
+  }, [currentSongIndex])
 
   return (
     <main className="App">
       <MediaPlayer 
-        song={songs[currentSongIndex]}
-        nextSong={songs[nextSongIndex]}
+        currentSongIndex={currentSongIndex}
+        setCurrentSongIndex={setCurrentSongIndex}
+        nextSongIndex={nextSongIndex}
+        songs={songs}
         />
 
 

@@ -6,6 +6,8 @@
 }
 
 .play-btn {
+  width: 57px;
+  height: auto;
   display: flex;
   margin: 0 30px;
   padding: 20px;
@@ -20,6 +22,27 @@
   color: #fff;
   font-size: 24px;
   cursor: pointer;
+  transition: 0.4s;
+}
+
+.pause-btn {
+  width: 57px;
+  height: auto;
+  display: flex;
+  margin: 0 30px;
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8),
+    -4px -4px 10px rgba(255, 255, 255, 0.4),
+    inset -4px -4px 10px rgba(0, 0, 0, 0.4),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.4);
+  border: none;
+  outline: none;
+  background-color: #141414;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .skip-btn {

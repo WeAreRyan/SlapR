@@ -4,4 +4,4 @@ A music application
 
 ## Using
 
-FontAwesome
+FontAwesome, 
